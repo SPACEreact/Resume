@@ -658,10 +658,14 @@ function initScrollAnimations() {
     // Not doing char-level animation for performance,
     // but we add a word-level reveal for headings
     gsap.utils.toArray('.split-text').forEach(text => {
-        const words = text.innerHTML.split(' ');
-        text.innerHTML = words.map(word =>
-            `<span class="word-wrapper"><span class="word-inner">${word}</span></span>`
-        ).join(' ');
+        // Preserve HTML tags (like <em class="accent-text">) while splitting words
+        const html = text.innerHTML;
+        // Split by spaces but keep HTML tags intact
+        const result = html.replace(/(<[^>]+>)|(\S+)/g, (match, tag, word) => {
+            if (tag) return tag; // preserve HTML tags as-is
+            return `<span class="word-wrapper"><span class="word-inner">${word}</span></span>`;
+        });
+        text.innerHTML = result;
     });
 })();
 
