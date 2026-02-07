@@ -1169,35 +1169,45 @@ button:hover~.cursor .cursor-ring,
     transform: translateY(20px);
 }
 
+/* Vertical Video Card (9:16) */
+.video-card--vertical {
+    aspect-ratio: 9 / 16;
+}
+
+/* Contact Links - Minimal Horizontal Pills */
 .contact-links {
     display: flex;
-    flex-direction: column;
-    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    margin-top: 48px;
 }
 
 .contact-link {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 32px 0;
-    border-top: 1px solid var(--color-glass-border);
-    transition: all 0.5s var(--ease-expo);
+    gap: 12px;
+    padding: 16px 32px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 100px;
+    color: var(--color-text);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    transition: all 0.4s var(--ease-out);
+    position: relative;
+    overflow: hidden;
     opacity: 0;
-    transform: translateX(-30px);
-}
-
-.contact-link:last-child {
-    border-bottom: 1px solid var(--color-glass-border);
+    transform: translateY(20px);
 }
 
 .contact-link:hover {
-    padding-left: 24px;
-}
-
-.contact-link-inner {
-    display: flex;
-    align-items: center;
-    gap: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 255, 212, 0.15);
 }
 
 .contact-link-icon {
@@ -1213,25 +1223,17 @@ button:hover~.cursor .cursor-ring,
 
 .contact-link-text {
     font-family: var(--font-display);
-    font-size: clamp(20px, 3vw, 32px);
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    transition: color 0.3s;
-}
-
-.contact-link:hover .contact-link-text {
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 .contact-link-handle {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    color: var(--color-text-dim);
-    letter-spacing: 0.05em;
+    display: none;
+    /* Hide handle in simple view, or restore if needed */
 }
+
+
 
 .contact-link-arrow {
     font-size: 24px;
