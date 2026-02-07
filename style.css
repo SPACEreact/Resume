@@ -1723,9 +1723,10 @@ button:hover~.cursor .cursor-ring,
 }
 
 .showreel-grid--vertical {
-    display: flex;
+    display: flex !important;
     gap: 20px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .video-card {
@@ -1742,8 +1743,8 @@ button:hover~.cursor .cursor-ring,
 }
 
 .video-card--vertical {
-    aspect-ratio: 9 / 16;
-    width: 200px;
+    aspect-ratio: 9 / 16 !important;
+    width: 200px !important;
     max-width: 100%;
 }
 
