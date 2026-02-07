@@ -1908,3 +1908,134 @@ button:hover~.cursor .cursor-ring,
         grid-template-columns: 1fr;
     }
 }
+
+/* ---- Clients / Trusted By Section ---- */
+.clients-section {
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border-top: 1px solid var(--color-glass-border);
+    border-bottom: 1px solid var(--color-glass-border);
+}
+
+.clients-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    text-align: center;
+    margin-bottom: 40px;
+    opacity: 0.7;
+}
+
+.clients-marquee {
+    overflow: hidden;
+    mask-image: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
+    -webkit-mask-image: linear-gradient(90deg, transparent, white 15%, white 85%, transparent);
+}
+
+.clients-track {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    white-space: nowrap;
+    will-change: transform;
+    animation: clientsScroll 25s linear infinite;
+}
+
+.client-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 28px;
+    background: var(--color-glass);
+    border: 1px solid var(--color-glass-border);
+    border-radius: 60px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.4s var(--ease-expo);
+    flex-shrink: 0;
+}
+
+.client-item:hover {
+    background: var(--color-glass-hover);
+    border-color: rgba(0, 255, 212, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 212, 0.08);
+}
+
+.client-icon {
+    width: 36px;
+    height: 36px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.client-item:hover .client-icon {
+    opacity: 1;
+}
+
+.client-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.client-name {
+    font-family: var(--font-display);
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    white-space: nowrap;
+}
+
+.client-divider {
+    color: var(--color-accent);
+    font-size: 14px;
+    opacity: 0.3;
+    flex-shrink: 0;
+}
+
+@keyframes clientsScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.clients-marquee:hover .clients-track {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .clients-section {
+        padding: 48px 0;
+    }
+
+    .clients-label {
+        margin-bottom: 24px;
+    }
+
+    .client-item {
+        padding: 12px 20px;
+        gap: 12px;
+    }
+
+    .client-icon {
+        width: 28px;
+        height: 28px;
+    }
+
+    .clients-track {
+        gap: 32px;
+    }
+}
