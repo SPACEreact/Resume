@@ -1169,10 +1169,7 @@ button:hover~.cursor .cursor-ring,
     transform: translateY(20px);
 }
 
-/* Vertical Video Card (9:16) */
-.video-card--vertical {
-    aspect-ratio: 9 / 16;
-}
+
 
 /* Contact Links - Minimal Horizontal Pills */
 .contact-links {
@@ -1736,6 +1733,15 @@ button:hover~.cursor .cursor-ring,
 
 .video-card--large {
     aspect-ratio: 16/9;
+}
+
+.video-card--vertical {
+    aspect-ratio: 9 / 16;
+    max-width: 320px;
+}
+
+.video-card--vertical video {
+    object-position: center;
 }
 
 .video-card video {
