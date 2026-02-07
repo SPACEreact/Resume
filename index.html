@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Singh Bais — Content Storyteller & Photographer</title>
+    <meta name="description"
+        content="Himanshu Singh Bais — A creative content storyteller, photographer, and visual artist. Light. Composition. Click.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP & Plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-text">
+                <span class="preloader-letter" data-letter="H">H</span>
+                <span class="preloader-letter" data-letter="I">I</span>
+                <span class="preloader-letter" data-letter="M">M</span>
+                <span class="preloader-letter" data-letter="A">A</span>
+                <span class="preloader-letter" data-letter="N">N</span>
+                <span class="preloader-letter" data-letter="S">S</span>
+                <span class="preloader-letter" data-letter="H">H</span>
+                <span class="preloader-letter" data-letter="U">U</span>
+            </div>
+            <div class="preloader-bar">
+                <div class="preloader-progress" id="preloader-progress"></div>
+            </div>
+            <div class="preloader-counter" id="preloader-counter">0%</div>
+        </div>
+    </div>
+
+    <!-- Three.js Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">
+            <span class="nav-logo-text">H<span class="accent">.</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#about" class="nav-link" data-hover="About">About</a>
+            <a href="#skills" class="nav-link" data-hover="Skills">Skills</a>
+            <a href="#work" class="nav-link" data-hover="Work">Work</a>
+            <a href="#gallery" class="nav-link" data-hover="Gallery">Gallery</a>
+            <a href="#scripts" class="nav-link" data-hover="Scripts">Scripts</a>
+            <a href="#showreel" class="nav-link" data-hover="Showreel">Showreel</a>
+            <a href="#contact" class="nav-link" data-hover="Contact">Contact</a>
+        </div>
+        <div class="nav-hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#skills" class="mobile-link">Skills</a>
+        <a href="#work" class="mobile-link">Work</a>
+        <a href="#gallery" class="mobile-link">Gallery</a>
+        <a href="#scripts" class="mobile-link">Scripts</a>
+        <a href="#showreel" class="mobile-link">Showreel</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span class="hero-tag-line"></span>
+                    <span class="hero-tag-text">Content Storyteller & Photographer</span>
+                </div>
+                <h1 class="hero-title">
+                    <div class="hero-title-line">
+                        <span class="hero-word" data-speed="1.1">Himanshu</span>
+                    </div>
+                    <div class="hero-title-line">
+                        <span class="hero-word" data-speed="0.9">Singh</span>
+                        <span class="hero-word outline" data-speed="1.2">Bais</span>
+                    </div>
+                </h1>
+                <p class="hero-subtitle">
+                    <span class="hero-subtitle-word">Light.</span>
+                    <span class="hero-subtitle-word">Composition.</span>
+                    <span class="hero-subtitle-word">Click.</span>
+                </p>
+                <div class="hero-cta">
+                    <a href="#work" class="btn-primary magnetic" data-strength="25">
+                        <span class="btn-text">View My Work</span>
+                        <span class="btn-icon">→</span>
+                    </a>
+                    <a href="#contact" class="btn-secondary magnetic" data-strength="25">
+                        <span class="btn-text">Let's Connect</span>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-scroll-indicator">
+                <div class="scroll-line"></div>
+                <span class="scroll-text">Scroll to Explore</span>
+            </div>
+            <div class="hero-floating-badge">
+                <span class="badge-number">80+</span>
+                <span class="badge-label">Creative Projects</span>
+            </div>
+        </section>
+
+        <!-- Horizontal Scroll Text -->
+        <section class="marquee-section">
+            <div class="marquee">
+                <div class="marquee-track">
+                    <span class="marquee-text">PHOTOGRAPHY</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">CONTENT CREATION</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">VISUAL STORYTELLING</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">EDITING</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">DESIGN</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">PHOTOGRAPHY</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">CONTENT CREATION</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">VISUAL STORYTELLING</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">EDITING</span>
+                    <span class="marquee-separator">✦</span>
+                    <span class="marquee-text">DESIGN</span>
+                    <span class="marquee-separator">✦</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">01</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">About Me</span>
+                </div>
+                <div class="about-grid">
+                    <div class="about-left">
+                        <div class="about-image-wrapper">
+                            <div class="about-image-mask">
+                                <div class="about-image" id="about-image">
+                                    <img src="Captureasdasda.PNG"
+                                        alt="Himanshu Singh Bais — Photographer & Content Storyteller" loading="lazy">
+                                </div>
+                            </div>
+                            <div class="about-image-decoration">
+                                <div class="deco-circle"></div>
+                                <div class="deco-line"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-right">
+                        <h2 class="about-heading split-text">
+                            I capture moments that tell <em class="accent-text">extraordinary</em> stories
+                        </h2>
+                        <div class="about-description">
+                            <p class="about-text reveal-text">
+                                I'm Himanshu Singh Bais, a passionate content storyteller and photographer
+                                based in India. With a keen eye for light, composition, and emotion, I transform
+                                ordinary moments into extraordinary visual narratives.
+                            </p>
+                            <p class="about-text reveal-text">
+                                My work spans photography, content creation, visual storytelling, and video editing.
+                                I believe every frame tells a story — and I'm here to make that story unforgettable.
+                                From capturing the golden hour to crafting compelling digital content, I bring creative
+                                vision to every project.
+                            </p>
+                            <p class="about-text reveal-text">
+                                Beyond the lens, I'm also an author, having written pieces on finding extraordinary
+                                hope and the will to persevere. Every creative pursuit feeds into my philosophy:
+                                Light. Composition. Click.
+                            </p>
+                        </div>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="80">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Creative Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="542">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Followers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-count="3">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">02</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">Skills & Expertise</span>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card glass-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="12" width="48" height="36" rx="4" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="32" cy="30" r="10" stroke="currentColor" stroke-width="2" />
+                                <circle cx="32" cy="30" r="4" fill="currentColor" />
+                                <circle cx="48" cy="18" r="3" fill="currentColor" opacity="0.5" />
+                                <line x1="20" y1="52" x2="44" y2="52" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Photography</h3>
+                        <p class="skill-desc">Capturing moments with precision — from portraits to landscapes, every
+                            shot tells a story through light and composition.</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="8" width="52" height="48" rx="4" stroke="currentColor"
+                                    stroke-width="2" />
+                                <polygon points="26,22 26,42 42,32" fill="currentColor" opacity="0.7" />
+                                <line x1="6" y1="46" x2="58" y2="46" stroke="currentColor" stroke-width="1.5" />
+                                <rect x="10" y="50" width="8" height="2" rx="1" fill="currentColor" opacity="0.5" />
+                                <rect x="20" y="50" width="8" height="2" rx="1" fill="currentColor" opacity="0.5" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Video Editing</h3>
+                        <p class="skill-desc">Crafting cinematic experiences through seamless editing, color grading,
+                            and dynamic transitions that captivate viewers.</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="32" cy="32" r="26" stroke="currentColor" stroke-width="2" />
+                                <path d="M20 28 Q32 12 44 28" stroke="currentColor" stroke-width="2" fill="none" />
+                                <path d="M20 36 Q32 52 44 36" stroke="currentColor" stroke-width="2" fill="none" />
+                                <line x1="32" y1="6" x2="32" y2="58" stroke="currentColor" stroke-width="1"
+                                    opacity="0.4" />
+                                <line x1="6" y1="32" x2="58" y2="32" stroke="currentColor" stroke-width="1"
+                                    opacity="0.4" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Content Creation</h3>
+                        <p class="skill-desc">Building engaging digital content strategies across platforms, from
+                            Instagram reels to long-form visual stories.</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 52 L12 20 L28 8 L52 8 L52 44 L36 56 Z" stroke="currentColor"
+                                    stroke-width="2" fill="none" />
+                                <line x1="28" y1="8" x2="28" y2="40" stroke="currentColor" stroke-width="1"
+                                    opacity="0.4" />
+                                <line x1="28" y1="40" x2="12" y2="52" stroke="currentColor" stroke-width="1"
+                                    opacity="0.4" />
+                                <line x1="28" y1="40" x2="52" y2="44" stroke="currentColor" stroke-width="1"
+                                    opacity="0.4" />
+                                <line x1="18" y1="24" x2="24" y2="24" stroke="currentColor" stroke-width="1.5" />
+                                <line x1="18" y1="30" x2="22" y2="30" stroke="currentColor" stroke-width="1.5" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Visual Storytelling</h3>
+                        <p class="skill-desc">Weaving narratives through visual media — combining photography, design,
+                            and writing to create immersive experiences.</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="10" width="44" height="44" rx="8" stroke="currentColor"
+                                    stroke-width="2" />
+                                <circle cx="22" cy="26" r="5" stroke="currentColor" stroke-width="1.5" />
+                                <path d="M14 48 L24 34 L34 40 L44 24 L50 32" stroke="currentColor" stroke-width="2"
+                                    fill="none" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Graphic Design</h3>
+                        <p class="skill-desc">Creating stunning visual designs for social media, branding, and digital
+                            marketing with a modern aesthetic edge.</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card glass-card" data-tilt>
+                        <div class="skill-icon">
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M32 8 L32 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M32 48 L32 56" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M8 32 L16 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <path d="M48 32 L56 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                <circle cx="32" cy="32" r="14" stroke="currentColor" stroke-width="2" />
+                                <circle cx="32" cy="32" r="6" fill="currentColor" opacity="0.3" />
+                                <path d="M15 15 L20 20" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <path d="M44 44 L49 49" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <path d="M49 15 L44 20" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                                <path d="M20 44 L15 49" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Color Grading</h3>
+                        <p class="skill-desc">Mastering the art of color to evoke emotion, set mood, and create
+                            cinematic-quality visual experiences.</p>
+                        <div class="skill-bar">
+                            <div class="skill-fill" data-width="93"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work / Portfolio Section -->
+        <section class="work" id="work">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">03</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">Selected Works</span>
+                </div>
+                <div class="work-intro">
+                    <h2 class="work-heading split-text">
+                        Every frame is a <em class="accent-text">universe</em> of emotion
+                    </h2>
+                </div>
+                <div class="work-gallery">
+                    <div class="work-item" data-category="Photography">
+                        <div class="work-item-inner">
+                            <div class="work-image">
+                                <img src="wdaefsfsdf.PNG" alt="Golden Hour — Landscape" loading="lazy">
+                                <div class="work-overlay">
+                                    <span class="work-category">Photography</span>
+                                    <h3 class="work-title">Golden Hour Series</h3>
+                                    <p class="work-subtitle">Capturing the magic of dawn and dusk</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item" data-category="Content">
+                        <div class="work-item-inner">
+                            <div class="work-image">
+                                <img src="asdfasefe.PNG" alt="Heart Shaped Leaf — Macro" loading="lazy">
+                                <div class="work-overlay">
+                                    <span class="work-category">Content</span>
+                                    <h3 class="work-title">Visual Narratives</h3>
+                                    <p class="work-subtitle">Stories told through the lens</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item" data-category="Editing">
+                        <div class="work-item-inner">
+                            <div class="work-image">
+                                <img src="fsdfsdfffff.PNG" alt="Fire & Sparks — Long Exposure" loading="lazy">
+                                <div class="work-overlay">
+                                    <span class="work-category">Editing</span>
+                                    <h3 class="work-title">Cinematic Edits</h3>
+                                    <p class="work-subtitle">Color grading &amp; visual effects</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item" data-category="Writing">
+                        <div class="work-item-inner">
+                            <div class="work-image">
+                                <img src="sdadwasd.PNG" alt="Night Sky & Tree Silhouette" loading="lazy">
+                                <div class="work-overlay">
+                                    <span class="work-category">Writing</span>
+                                    <h3 class="work-title">Extraordinary Hope</h3>
+                                    <p class="work-subtitle">Author — personal storytelling</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item" data-category="Design">
+                        <div class="work-item-inner">
+                            <div class="work-image">
+                                <img src="fgdfgdfgd.PNG" alt="Bee on Flowers — Nature Macro" loading="lazy">
+                                <div class="work-overlay">
+                                    <span class="work-category">Design</span>
+                                    <h3 class="work-title">Brand Visuals</h3>
+                                    <p class="work-subtitle">Modern design aesthetics</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="work-item" data-category="Photography">
+                        <div class="work-item-inner">
+                            <div class="work-image">
+                                <img src="asdasdaqed.PNG" alt="Mustard Flowers & Sky" loading="lazy">
+                                <div class="work-overlay">
+                                    <span class="work-category">Photography</span>
+                                    <h3 class="work-title">Portrait Collection</h3>
+                                    <p class="work-subtitle">Emotion through portraiture</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial / Quote Section -->
+        <section class="quote-section">
+            <div class="section-container">
+                <div class="big-quote">
+                    <span class="quote-mark">"</span>
+                    <p class="quote-text split-text">
+                        The best stories aren't just seen — they're felt.
+                        Every photograph is a conversation between light and shadow,
+                        a moment frozen in the infinity of time.
+                    </p>
+                    <div class="quote-author">
+                        <span class="quote-line"></span>
+                        <span class="quote-name">Himanshu Singh Bais</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photography Gallery Section -->
+        <section class="gallery" id="gallery">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">04</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">Photography Gallery</span>
+                </div>
+                <h2 class="gallery-heading split-text">
+                    Every shot is a world <em class="accent-text">waiting</em> to be explored
+                </h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item gallery-item--tall"><img src="fsdfsdf.PNG" alt="Leaf Veins — Macro"
+                            loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="asdasd.PNG" alt="Dew Drops on Grass" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="eafwetff.PNG" alt="White Flower — Night" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item gallery-item--wide"><img src="asdasda.PNG" alt="Wheat Under Blue Sky"
+                            loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="sdfsdfs.PNG" alt="Bee on White Flowers" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item gallery-item--tall"><img src="gdhgghfh.PNG" alt="Pink Flowers — Soft Light"
+                            loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="dfsdfsgfsdf.PNG" alt="Autumn Leaves on Ground" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="asfdsdfsrf.PNG" alt="Nature Close-up" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item gallery-item--wide"><img src="sdf.PNG" alt="Landscape Vista"
+                            loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="asdasdasdegf.PNG" alt="Texture & Light" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="dfgsdfsdf.PNG" alt="Golden Light Study" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="dfsf.PNG" alt="Nature Detail" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="asfsdf.PNG" alt="Field & Flora" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="sadafdg.PNG" alt="Rural Beauty" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="sdfgdfvbdfg.PNG" alt="Natural Patterns" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="sdfsdfsdf.PNG" alt="Light & Shadow" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="fdsgdgdfg.PNG" alt="Organic Study" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="ferfgertfw.PNG" alt="Color & Form" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                    <div class="gallery-item"><img src="asdasfdfs.PNG" alt="Minimalist Nature" loading="lazy">
+                        <div class="gallery-caption">@HIMANSHU</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Screenwriting Section -->
+        <section class="scripts" id="scripts">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">05</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">Screenwriting</span>
+                </div>
+                <h2 class="scripts-heading split-text">
+                    Stories that <em class="accent-text">breathe</em> beyond the page
+                </h2>
+                <div class="scripts-grid">
+                    <div class="script-card glass-card">
+                        <div class="script-icon">🎬</div>
+                        <span class="script-genre">Action / Drama</span>
+                        <h3 class="script-title">IRON HEART</h3>
+                        <p class="script-synopsis">A gripping narrative of unbreakable will and determination against
+                            all odds.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/🎬 IRON HEART.docx" download
+                            class="script-download">
+                            <span>Read Script</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                    <div class="script-card glass-card">
+                        <div class="script-icon">🎬</div>
+                        <span class="script-genre">Slice of Life</span>
+                        <h3 class="script-title">Just Here</h3>
+                        <p class="script-synopsis">A quiet meditation on presence, belonging, and the beauty of being
+                            rooted in the now.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/🎬 TITLE_ " Just Here".docx" download
+                            class="script-download">
+                            <span>Read Script</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                    <div class="script-card glass-card">
+                        <div class="script-icon">📝</div>
+                        <span class="script-genre">Drama</span>
+                        <h3 class="script-title">Silence</h3>
+                        <p class="script-synopsis">When words fail, silence speaks — a powerful exploration of unspoken
+                            emotions.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/Silence_.docx" download class="script-download">
+                            <span>Read Script</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                    <div class="script-card glass-card">
+                        <div class="script-icon">💄</div>
+                        <span class="script-genre">Commercial</span>
+                        <h3 class="script-title">Beautyfuel</h3>
+                        <p class="script-synopsis">A vibrant commercial script blending beauty, energy, and unstoppable
+                            confidence.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/Beautyfuel.docx" download
+                            class="script-download">
+                            <span>Read Script</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                    <div class="script-card glass-card">
+                        <div class="script-icon">⚔️</div>
+                        <span class="script-genre">Drama / Courage</span>
+                        <h3 class="script-title">Bound by Courage</h3>
+                        <p class="script-synopsis">A tale of bravery that binds together hearts and destinies in the
+                            face of adversity.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/TITLE_ BOUND BY COURAGE.docx" download
+                            class="script-download">
+                            <span>Read Script</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                    <div class="script-card glass-card">
+                        <div class="script-icon">🌳</div>
+                        <span class="script-genre">Reflective</span>
+                        <h3 class="script-title">Bench Under the Tree</h3>
+                        <p class="script-synopsis">A contemplative journey of memory and peace found beneath the shade
+                            of an old tree.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/Bench under the tree.docx" download
+                            class="script-download">
+                            <span>Read Script</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="scripts-more">
+                    <p class="scripts-more-label">More Scripts Available</p>
+                    <div class="scripts-list">
+                        <span class="script-tag">A Day in Life</span>
+                        <span class="script-tag">Under the Tree</span>
+                        <span class="script-tag">The Window Girl</span>
+                    </div>
+                </div>
+                <div class="scripts-book">
+                    <div class="script-card glass-card script-card--featured">
+                        <div class="script-icon">📖</div>
+                        <span class="script-genre">Book / Personal Story</span>
+                        <h3 class="script-title">The Will to Find Extraordinary Hope</h3>
+                        <p class="script-synopsis">My personal journey through challenges, hope, and finding
+                            extraordinary meaning in life's moments.</p>
+                        <div class="script-downloads">
+                            <a href="The will to find extraordinary hope (1).docx" download class="script-download">
+                                <span>Read DOCX</span><span class="script-arrow">↗</span>
+                            </a>
+                            <a href="love the extraordinary hope.pdf" target="_blank" class="script-download">
+                                <span>View PDF</span><span class="script-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="scripts-book">
+                    <div class="script-card glass-card script-card--featured">
+                        <div class="script-icon">💜</div>
+                        <span class="script-genre">Poetry / Reflections</span>
+                        <h3 class="script-title">Love the Extraordinary Hope</h3>
+                        <p class="script-synopsis">A heartfelt collection of poems — raw, emotional verses exploring
+                            love, hope, and the extraordinary moments that define us.</p>
+                        <div class="script-downloads">
+                            <a href="love the extraordinary hope.docx" download class="script-download">
+                                <span>Download Poems (DOCX)</span><span class="script-arrow">↗</span>
+                            </a>
+                            <a href="love the extraordinary hope.pdf" target="_blank" class="script-download">
+                                <span>View PDF</span><span class="script-arrow">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="scripts-grid" style="margin-top:32px;">
+                    <div class="script-card glass-card">
+                        <div class="script-icon">✍️</div>
+                        <span class="script-genre">Poetry</span>
+                        <h3 class="script-title">Poems — I</h3>
+                        <p class="script-synopsis">A personal collection of verse — reflections on life, moments, and
+                            the beauty in between.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/Untitled document.docx" download
+                            class="script-download">
+                            <span>Read Poems</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                    <div class="script-card glass-card">
+                        <div class="script-icon">✍️</div>
+                        <span class="script-genre">Poetry</span>
+                        <h3 class="script-title">Poems — II</h3>
+                        <p class="script-synopsis">More verses from the heart — intimate words on emotion, memory, and
+                            finding meaning.</p>
+                        <a href="Script -20260207T113110Z-3-001/Script_/Untitled document(1).docx" download
+                            class="script-download">
+                            <span>Read Poems</span><span class="script-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Showreel Section -->
+        <section class="showreel" id="showreel">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">06</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">Video Showreel</span>
+                </div>
+                <h2 class="showreel-heading split-text">
+                    Motion that <em class="accent-text">moves</em> the soul
+                </h2>
+
+                <!-- Featured Videos -->
+                <div class="showreel-featured">
+                    <div class="video-card video-card--large">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/Sequence_01.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="video-tag">Featured Reel</span>
+                            <h3 class="video-title">Cinematic Showreel</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--large">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/Sequence_01_1.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="video-tag">Featured Reel</span>
+                            <h3 class="video-title">Creative Montage</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: AI Projects -->
+                <h3 class="showreel-category-title">AI & VFX Projects</h3>
+                <div class="showreel-grid">
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/ai_vfx_dayinlife.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">AI VFX</span>
+                            <h3 class="video-title">A Day in Life</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/scifi_monster.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">AI Film</span>
+                            <h3 class="video-title">Sci-Fi Monster</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/ai_animation.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">AI Animation</span>
+                            <h3 class="video-title">Character Animation</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/infiltration.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Short Film</span>
+                            <h3 class="video-title">Infiltration</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Ads & Commercial -->
+                <h3 class="showreel-category-title">Ads & Commercial</h3>
+                <div class="showreel-grid">
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/truck_ad.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Ad</span>
+                            <h3 class="video-title">Truck Commercial</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/tvc_ad.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">TVC</span>
+                            <h3 class="video-title">TVC Ad Style</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/hajoori_lifestyle.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Lifestyle</span>
+                            <h3 class="video-title">Hajoori Lifestyle</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Storytelling -->
+                <h3 class="showreel-category-title">Visual Storytelling</h3>
+                <div class="showreel-grid">
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/life_in_village.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Story</span>
+                            <h3 class="video-title">Life in Village</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/anxiety.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Story</span>
+                            <h3 class="video-title">Anxiety</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/a_hobby.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Story</span>
+                            <h3 class="video-title">A Hobby</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/creative_reel.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Reel</span>
+                            <h3 class="video-title">Creative Projects Reel</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/fight_4.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Action</span>
+                            <h3 class="video-title">Fight Sequence</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/mahadev.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Cinematic</span>
+                            <h3 class="video-title">Mahadev</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small direct videos -->
+                <h3 class="showreel-category-title">Quick Clips</h3>
+                <div class="showreel-grid">
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="get.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Clip</span>
+                            <h3 class="video-title">Get</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="A_continuous_highaltitude_202601201512_6e5h.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Aerial</span>
+                            <h3 class="video-title">High Altitude</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Download Section -->
+        <section class="resume-section">
+            <div class="section-container">
+                <div class="resume-banner glass-card">
+                    <div class="resume-info">
+                        <h3 class="resume-title">Download My Resume</h3>
+                        <p class="resume-desc">Get a comprehensive overview of my skills, experience, and creative
+                            portfolio.</p>
+                    </div>
+                    <a href="Himanshu Singh Bais(2).pdf.pdf" target="_blank" class="btn-primary magnetic"
+                        data-strength="25">
+                        <span class="btn-text">Download PDF</span>
+                        <span class="btn-icon">↓</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">07</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">Get in Touch</span>
+                </div>
+                <div class="contact-content">
+                    <h2 class="contact-heading split-text">
+                        Let's create something <em class="accent-text">extraordinary</em> together
+                    </h2>
+                    <p class="contact-desc reveal-text">
+                        Whether it's a photography project, content collaboration, or just a creative conversation — I'm
+                        always open to new opportunities and connections.
+                    </p>
+                    <div class="contact-links">
+                        <a href="https://www.instagram.com/spac_edroid" target="_blank" class="contact-link magnetic"
+                            data-strength="30">
+                            <div class="contact-link-inner">
+                                <span class="contact-link-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" />
+                                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+                                    </svg>
+                                </span>
+                                <span class="contact-link-text">Instagram</span>
+                                <span class="contact-link-handle">@spac_edroid</span>
+                            </div>
+                            <span class="contact-link-arrow">↗</span>
+                        </a>
+                        <a href="https://www.instagram.com/innerdroid" target="_blank" class="contact-link magnetic"
+                            data-strength="30">
+                            <div class="contact-link-inner">
+                                <span class="contact-link-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" />
+                                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+                                    </svg>
+                                </span>
+                                <span class="contact-link-text">Instagram</span>
+                                <span class="contact-link-handle">@innerdroid</span>
+                            </div>
+                            <span class="contact-link-arrow">↗</span>
+                        </a>
+                        <a href="https://www.instagram.com/hi_manshu_plays" target="_blank"
+                            class="contact-link magnetic" data-strength="30">
+                            <div class="contact-link-inner">
+                                <span class="contact-link-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                        <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5" />
+                                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
+                                    </svg>
+                                </span>
+                                <span class="contact-link-text">Instagram</span>
+                                <span class="contact-link-handle">@hi_manshu_plays</span>
+                            </div>
+                            <span class="contact-link-arrow">↗</span>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1rPZ2K-MnkoMdrVII8boDRaDJg9YiOihH"
+                            target="_blank" class="contact-link magnetic" data-strength="30">
+                            <div class="contact-link-inner">
+                                <span class="contact-link-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                                            stroke="currentColor" stroke-width="1.5" />
+                                        <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="1.5" />
+                                        <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="1.5" />
+                                        <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span class="contact-link-text">Portfolio</span>
+                                <span class="contact-link-handle">Content Storyteller Portfolio</span>
+                            </div>
+                            <span class="contact-link-arrow">↗</span>
+                        </a>
+                        <a href="mailto:himanshuworkofficial@gmail.com" class="contact-link magnetic"
+                            data-strength="30">
+                            <div class="contact-link-inner">
+                                <span class="contact-link-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor"
+                                            stroke-width="1.5" />
+                                        <polyline points="2 4 12 13 22 4" stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span class="contact-link-text">Email</span>
+                                <span class="contact-link-handle">himanshuworkofficial@gmail.com</span>
+                            </div>
+                            <span class="contact-link-arrow">↗</span>
+                        </a>
+                        <a href="tel:+916387705476" class="contact-link magnetic" data-strength="30">
+                            <div class="contact-link-inner">
+                                <span class="contact-link-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                                            stroke="currentColor" stroke-width="1.5" />
+                                    </svg>
+                                </span>
+                                <span class="contact-link-text">Phone</span>
+                                <span class="contact-link-handle">+91 6387705476</span>
+                            </div>
+                            <span class="contact-link-arrow">↗</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-logo">
+                        <span class="footer-logo-text">Himanshu<span class="accent">.</span></span>
+                    </div>
+                    <div class="footer-tagline">Light. Composition. Click.</div>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-copyright">© 2026 Himanshu Singh Bais. All rights reserved.</span>
+                    <span class="footer-credit">Crafted with passion & pixels</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
