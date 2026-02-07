@@ -522,7 +522,7 @@ function initScrollAnimations() {
     gsap.utils.toArray('.contact-link').forEach((link, i) => {
         gsap.to(link, {
             opacity: 1,
-            x: 0,
+            y: 0,
             duration: 0.8,
             delay: i * 0.15,
             ease: 'power3.out',
