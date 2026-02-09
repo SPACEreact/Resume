@@ -5,10 +5,10 @@ node_modules/
 ffmpeg-*/
 
 # Original large video files (use compressed/ versions)
-fight_4.mp4
-mahadev.mp4
-Sequence 01.mp4
-Sequence 01_1.mp4
+/fight_4.mp4
+/mahadev.mp4
+/Sequence 01.mp4
+/Sequence 01_1.mp4
 
 # Original uncompressed source folders
 AI-20260207T113154Z-3-001/
