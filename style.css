@@ -5,16 +5,31 @@
 
 /* ---- CSS Variables / Design Tokens ---- */
 :root {
-    --color-bg: #050208;
-    --color-bg-secondary: #0a0812;
-    --color-accent: #00FFD4;
-    --color-accent-blue: #5465FF;
-    --color-accent-light: #D2DDFF;
-    --color-text: #f0f0f0;
-    --color-text-dim: #8a8a9a;
-    --color-glass: rgba(255, 255, 255, 0.04);
-    --color-glass-border: rgba(255, 255, 255, 0.08);
-    --color-glass-hover: rgba(255, 255, 255, 0.08);
+    /* Neomorphism Light Theme */
+    --color-bg: #E0E5EC;
+    --color-bg-secondary: #E0E5EC;
+
+    /* Pastel Accents */
+    --color-accent: #FF7675;
+    /* Pastel Red/Pink */
+    --color-accent-blue: #74B9FF;
+    /* Pastel Blue */
+    --color-accent-light: #A29BFE;
+    /* Pastel Lavender */
+
+    /* Typography */
+    --color-text: #4A5568;
+    /* Dark Grey Blue */
+    --color-text-dim: #718096;
+    /* Medium Grey */
+
+    /* Glass/Neo Params */
+    --color-glass: rgba(255, 255, 255, 0.4);
+    --color-glass-border: rgba(255, 255, 255, 0.5);
+    --color-glass-hover: rgba(255, 255, 255, 0.6);
+
+    --shadow-light: 9px 9px 16px rgb(163, 177, 198, 0.6);
+    --shadow-dark: -9px -9px 16px rgba(255, 255, 255, 0.5);
 
     --font-display: 'Syne', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -226,10 +241,10 @@ button:hover~.cursor .cursor-ring,
 }
 
 .nav.scrolled {
-    background: rgba(5, 2, 8, 0.8);
+    background: rgba(224, 229, 236, 0.8);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid var(--color-glass-border);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .nav-logo-text {
@@ -2355,24 +2370,23 @@ html.lenis body {
     transform: translateY(0);
 }
 
+
 /* ==========================================
-   16. GLASSMORPHISM UTILITY
+   16. NEOMORPHISM UTILITY (Replaces Glass)
    ========================================== */
 .glass-card {
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: var(--color-bg);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--shadow-light), var(--shadow-dark);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        background 0.4s ease,
-        border-color 0.4s ease,
         box-shadow 0.4s ease;
+    /* Optional: keep blur if elements are behind, but usually solid for neo */
 }
 
 .glass-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.06);
-    border-color: rgba(255, 255, 255, 0.15);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 12px 12px 24px rgb(163, 177, 198, 0.7),
+        -12px -12px 24px rgba(255, 255, 255, 0.6);
+    border-color: rgba(255, 255, 255, 0.8);
 }

@@ -26,9 +26,9 @@
     const sizes = new Float32Array(particleCount);
 
     const colorPalette = [
-        { r: 0 / 255, g: 255 / 255, b: 212 / 255 },    // #00FFD4
-        { r: 84 / 255, g: 101 / 255, b: 255 / 255 },     // #5465FF
-        { r: 210 / 255, g: 221 / 255, b: 255 / 255 },    // #D2DDFF
+        { r: 255 / 255, g: 118 / 255, b: 117 / 255 },   // #FF7675 (Pastel Red)
+        { r: 116 / 255, g: 185 / 255, b: 255 / 255 },   // #74B9FF (Pastel Blue)
+        { r: 162 / 255, g: 155 / 255, b: 254 / 255 },   // #A29BFE (Pastel Purple)
     ];
 
     for (let i = 0; i < particleCount; i++) {
@@ -52,8 +52,8 @@
         size: 0.03,
         vertexColors: true,
         transparent: true,
-        opacity: 0.6,
-        blending: THREE.AdditiveBlending,
+        opacity: 0.8,
+        blending: THREE.NormalBlending,
         sizeAttenuation: true,
     });
 
@@ -63,10 +63,10 @@
     // Connecting lines
     const lineGeometry = new THREE.BufferGeometry();
     const lineMaterial = new THREE.LineBasicMaterial({
-        color: 0x00FFD4,
+        color: 0xA29BFE,
         transparent: true,
-        opacity: 0.03,
-        blending: THREE.AdditiveBlending,
+        opacity: 0.15,
+        blending: THREE.NormalBlending,
     });
     const linePositions = new Float32Array(300 * 6);
     lineGeometry.setAttribute('position', new THREE.BufferAttribute(linePositions, 3));
