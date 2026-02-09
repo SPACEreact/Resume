@@ -870,6 +870,8 @@ button:hover~.cursor .cursor-ring,
 
 .stat-item {
     text-align: center;
+    contain: content;
+    /* Isolate reflows from propagating */
 }
 
 .stat-number {
@@ -881,6 +883,11 @@ button:hover~.cursor .cursor-ring,
     -webkit-text-fill-color: transparent;
     background-clip: text;
     line-height: 1;
+    font-variant-numeric: tabular-nums;
+    /* Equal-width digits */
+    display: inline-block;
+    min-width: 2.5ch;
+    /* Reserve space for up to 3 digits */
 }
 
 .stat-plus {
