@@ -5,31 +5,42 @@
 
 /* ---- CSS Variables / Design Tokens ---- */
 :root {
-    /* Neomorphism Light Theme */
-    --color-bg: #E0E5EC;
-    --color-bg-secondary: #E0E5EC;
+    /* Dark Claymorphism Theme */
+    --color-bg: #2C3E50;
+    /* Dark Slate Blue */
+    --color-bg-secondary: #34495E;
+    /* Lighter Slate for elements */
 
-    /* Pastel Accents */
+    /* Accents (Pastel Pop) */
     --color-accent: #FF7675;
-    /* Pastel Red/Pink */
+    /* Pastel Red */
     --color-accent-blue: #74B9FF;
     /* Pastel Blue */
     --color-accent-light: #A29BFE;
-    /* Pastel Lavender */
+    /* Lavender */
 
     /* Typography */
-    --color-text: #4A5568;
-    /* Dark Grey Blue */
-    --color-text-dim: #718096;
-    /* Medium Grey */
+    --color-text: #ECF0F1;
+    /* White/Grey */
+    --color-text-dim: #BDC3C7;
+    /* Light Grey */
 
-    /* Glass/Neo Params */
-    --color-glass: rgba(255, 255, 255, 0.4);
-    --color-glass-border: rgba(255, 255, 255, 0.5);
-    --color-glass-hover: rgba(255, 255, 255, 0.6);
+    /* Clay Params */
+    --color-glass: rgba(255, 255, 255, 0.05);
+    /* Fallback */
+    --color-glass-border: transparent;
+    --color-glass-hover: rgba(255, 255, 255, 0.1);
 
-    --shadow-light: 9px 9px 16px rgb(163, 177, 198, 0.6);
-    --shadow-dark: -9px -9px 16px rgba(255, 255, 255, 0.5);
+    /* Clay Shadows (Inset + Drop) */
+    --shadow-clay: 8px 8px 16px rgba(0, 0, 0, 0.25),
+        -8px -8px 16px rgba(255, 255, 255, 0.05),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.05),
+        inset -4px -4px 8px rgba(0, 0, 0, 0.25);
+
+    --shadow-clay-hover: 12px 12px 24px rgba(0, 0, 0, 0.3),
+        -12px -12px 24px rgba(255, 255, 255, 0.05),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.05),
+        inset -4px -4px 8px rgba(0, 0, 0, 0.25);
 
     --font-display: 'Syne', sans-serif;
     --font-body: 'Outfit', sans-serif;
@@ -121,7 +132,7 @@ img {
     position: absolute;
     width: 40px;
     height: 40px;
-    border: 1px solid rgba(0, 255, 212, 0.5);
+    border: 1px solid var(--color-accent-blue);
     border-radius: 50%;
     transform: translate(-50%, -50%);
     transition: width 0.4s var(--ease-expo), height 0.4s var(--ease-expo),
@@ -241,10 +252,10 @@ button:hover~.cursor .cursor-ring,
 }
 
 .nav.scrolled {
-    background: rgba(224, 229, 236, 0.8);
+    background: rgba(44, 62, 80, 0.95);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-logo-text {
@@ -2372,21 +2383,22 @@ html.lenis body {
 
 
 /* ==========================================
-   16. NEOMORPHISM UTILITY (Replaces Glass)
+   16. CLAYMORPHISM UTILITY (Dark Mode)
    ========================================== */
 .glass-card {
-    background: var(--color-bg);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: var(--shadow-light), var(--shadow-dark);
+    background: var(--color-bg-secondary);
+    border-radius: 32px;
+    border: none;
+    box-shadow: var(--shadow-clay);
+    color: var(--color-text);
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.4s ease;
-    /* Optional: keep blur if elements are behind, but usually solid for neo */
+        box-shadow 0.4s ease,
+        background 0.4s ease;
 }
 
 .glass-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 12px 12px 24px rgb(163, 177, 198, 0.7),
-        -12px -12px 24px rgba(255, 255, 255, 0.6);
-    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-clay-hover);
+    background: #3e5871;
+    /* Slightly lighter on hover */
 }
