@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Showreel — Himanshu Singh Bais</title>
+    <meta name="description"
+        content="Video showreel by Himanshu Singh Bais — Cinematic reels, AI VFX, ads, and visual storytelling.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css?v=9.0">
+</head>
+
+<body>
+    <div class="cursor" id="cursor">
+        <div class="cursor-dot"></div>
+        <div class="cursor-ring"></div>
+    </div>
+
+    <div class="noise-overlay"></div>
+
+    <!-- Sub-page Navigation -->
+    <nav class="nav nav--subpage" id="nav">
+        <a href="index.html" class="nav-back magnetic" data-strength="20">
+            <span class="nav-back-arrow">←</span>
+            <span class="nav-back-text">Back to Home</span>
+        </a>
+        <div class="nav-logo">
+            <span class="nav-logo-text">H<span class="accent">.</span></span>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Sub-page Hero -->
+        <section class="subpage-hero">
+            <div class="section-container">
+                <div class="section-label">
+                    <span class="label-number">06</span>
+                    <span class="label-line"></span>
+                    <span class="label-text">Video Showreel</span>
+                </div>
+                <h1 class="subpage-title split-text">
+                    Motion that <em class="accent-text">moves</em> the soul
+                </h1>
+            </div>
+        </section>
+
+        <!-- Full Showreel Content -->
+        <section class="showreel" id="showreel">
+            <div class="section-container">
+                <!-- Featured Videos -->
+                <div class="showreel-featured">
+                    <div class="video-card video-card--large video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/Sequence_01.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="video-tag">Featured Reel</span>
+                            <h3 class="video-title">Cinematic Showreel</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--large video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/Sequence_01_1.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <span class="video-tag">Featured Reel</span>
+                            <h3 class="video-title">Creative Montage</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: AI Projects -->
+                <h3 class="showreel-category-title">AI & VFX Projects</h3>
+                <div class="showreel-grid showreel-grid--vertical">
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/ai_vfx_dayinlife.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">AI VFX</span>
+                            <h3 class="video-title">A Day in Life</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/scifi_monster.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">AI Film</span>
+                            <h3 class="video-title">Sci-Fi Monster</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/ai_animation.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">AI Animation</span>
+                            <h3 class="video-title">Character Animation</h3>
+                        </div>
+                    </div>
+                    <div class="video-card">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/infiltration.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Short Film</span>
+                            <h3 class="video-title">Infiltration</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Ads & Commercial -->
+                <h3 class="showreel-category-title">Ads & Commercial</h3>
+                <div class="showreel-grid showreel-grid--vertical">
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/truck_ad.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Ad</span>
+                            <h3 class="video-title">Truck Commercial</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/tvc_ad.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">TVC</span>
+                            <h3 class="video-title">TVC Ad Style</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/hajoori_lifestyle.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Lifestyle</span>
+                            <h3 class="video-title">Hajoori Lifestyle</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category: Storytelling -->
+                <h3 class="showreel-category-title">Visual Storytelling</h3>
+                <div class="showreel-grid showreel-grid--vertical">
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/life_in_village.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Story</span>
+                            <h3 class="video-title">Life in Village</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/anxiety.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Story</span>
+                            <h3 class="video-title">Anxiety</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/a_hobby.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Story</span>
+                            <h3 class="video-title">A Hobby</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/creative_reel.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Reel</span>
+                            <h3 class="video-title">Creative Projects Reel</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/fight_4.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Action</span>
+                            <h3 class="video-title">Fight Sequence</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="compressed/mahadev.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Cinematic</span>
+                            <h3 class="video-title">Mahadev</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small direct videos -->
+                <h3 class="showreel-category-title">Quick Clips</h3>
+                <div class="showreel-grid showreel-grid--vertical">
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="get.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Clip</span>
+                            <h3 class="video-title">Get</h3>
+                        </div>
+                    </div>
+                    <div class="video-card video-card--vertical">
+                        <video preload="metadata" playsinline muted loop>
+                            <source src="A_continuous_highaltitude_202601201512_6e5h.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-play-overlay">
+                            <div class="play-btn">▶</div>
+                        </div>
+                        <div class="video-info"><span class="video-tag">Aerial</span>
+                            <h3 class="video-title">High Altitude</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <div class="footer-logo">
+                        <span class="footer-logo-text">Himanshu<span class="accent">.</span></span>
+                    </div>
+                    <div class="footer-tagline">Light. Composition. Click.</div>
+                </div>
+                <div class="footer-bottom">
+                    <span class="footer-copyright">© 2026 Himanshu Singh Bais. All rights reserved.</span>
+                    <span class="footer-credit">Crafted with passion & pixels</span>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js?v=9.0"></script>
+</body>
+
+</html>

@@ -2039,3 +2039,271 @@ button:hover~.cursor .cursor-ring,
         gap: 32px;
     }
 }
+
+/* ==========================================
+   EXPLORE MORE — SECTION PREVIEW CARDS
+   ========================================== */
+
+.explore {
+    padding: 120px 0;
+}
+
+.explore-heading {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 60px;
+    color: var(--text-primary);
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+
+.explore-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+}
+
+.explore-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 255, 212, 0.15),
+        0 0 0 1px rgba(0, 255, 212, 0.2);
+}
+
+/* Thumbnail Area */
+.explore-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+}
+
+.explore-thumb img,
+.explore-thumb video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.explore-card:hover .explore-thumb img,
+.explore-card:hover .explore-thumb video {
+    transform: scale(1.08);
+}
+
+.explore-thumb-overlay {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+}
+
+/* Card Info */
+.explore-card-info {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.explore-card-number {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 2px;
+    opacity: 0.7;
+}
+
+.explore-card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.3;
+}
+
+.explore-card-desc {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.explore-card-link {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: gap 0.3s ease;
+}
+
+.explore-card:hover .explore-card-link {
+    gap: 14px;
+}
+
+.explore-arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.explore-card:hover .explore-arrow {
+    transform: translateX(4px);
+}
+
+/* ==========================================
+   SUB-PAGE NAVIGATION
+   ========================================== */
+
+.nav--subpage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+}
+
+.nav--subpage .nav-links,
+.nav--subpage .nav-hamburger {
+    display: none;
+}
+
+.nav-back {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease, gap 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-back:hover {
+    color: var(--accent);
+    gap: 16px;
+    background: rgba(0, 255, 212, 0.05);
+    border-color: rgba(0, 255, 212, 0.15);
+}
+
+.nav-back-arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-back:hover .nav-back-arrow {
+    transform: translateX(-4px);
+}
+
+/* ==========================================
+   SUB-PAGE HERO (COMPACT)
+   ========================================== */
+
+.subpage-hero {
+    padding: 160px 0 60px;
+}
+
+.subpage-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--text-primary);
+    margin-top: 24px;
+}
+
+/* ==========================================
+   RESPONSIVE — EXPLORE & SUB-PAGES
+   ========================================== */
+
+@media (max-width: 900px) {
+    .explore-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .explore-card {
+        flex-direction: row;
+    }
+
+    .explore-thumb {
+        width: 160px;
+        min-width: 160px;
+        aspect-ratio: unset;
+        height: 100%;
+    }
+
+    .explore-card-info {
+        padding: 20px;
+    }
+
+    .nav--subpage {
+        padding: 16px 24px;
+    }
+
+    .subpage-hero {
+        padding: 120px 0 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .explore-card {
+        flex-direction: column;
+    }
+
+    .explore-thumb {
+        width: 100%;
+        aspect-ratio: 16 / 10;
+        height: auto;
+    }
+
+    .explore-heading {
+        margin-bottom: 36px;
+    }
+
+    .nav-back-text {
+        display: none;
+    }
+
+    .nav-back {
+        padding: 10px 14px;
+    }
+
+    .subpage-hero {
+        padding: 100px 0 32px;
+    }
+
+    .subpage-title {
+        font-size: clamp(1.6rem, 6vw, 2.4rem);
+    }
+}
