@@ -9,6 +9,8 @@
 // ==========================================
 (function initThreeBackground() {
     const canvas = document.getElementById('bg-canvas');
+    if (!canvas) return; // Sub-pages don't have the canvas
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
@@ -152,6 +154,12 @@
 // ==========================================
 (function initPreloader() {
     const preloader = document.getElementById('preloader');
+    if (!preloader) {
+        // Sub-pages: no preloader, init animations directly
+        initHeroAnimations();
+        initScrollAnimations();
+        return;
+    }
     const progress = document.getElementById('preloader-progress');
     const counter = document.getElementById('preloader-counter');
     const letters = document.querySelectorAll('.preloader-letter');
@@ -587,6 +595,7 @@ function initScrollAnimations() {
 (function initNav() {
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
+    if (!hamburger || !mobileMenu) return; // Sub-pages use simplified nav
     const mobileLinks = mobileMenu.querySelectorAll('.mobile-link');
 
     hamburger.addEventListener('click', () => {
