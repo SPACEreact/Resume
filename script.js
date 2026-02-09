@@ -935,3 +935,97 @@ if (cursorDot && cursorRing) {
         });
     });
 }
+
+// ==========================================
+// 13. LENIS SMOOTH SCROLL
+// ==========================================
+function initLenis() {
+    if (typeof Lenis === 'undefined') return;
+
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        mouseMultiplier: 1,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    // Connect to ScrollTrigger
+    // lenis.on('scroll', ScrollTrigger.update) // Not strictly needed if using standard raf
+}
+
+// ==========================================
+// 14. PAGE TRANSITIONS
+// ==========================================
+function initPageTransitions() {
+    // 1. Create/Get Overlay
+    let overlay = document.querySelector('.page-transition-overlay');
+    if (!overlay) {
+        overlay = document.createElement('div');
+        overlay.className = 'page-transition-overlay';
+        document.body.appendChild(overlay);
+    }
+
+    // 2. Animate Out (On Page Load)
+    if (sessionStorage.getItem('isTransitioning')) {
+        overlay.classList.add('active'); // Start visible
+        gsap.set(overlay, { yPercent: 0, opacity: 1 });
+
+        gsap.to(overlay, {
+            yPercent: -100,
+            duration: 1,
+            ease: 'power4.inOut',
+            delay: 0.1,
+            onComplete: () => {
+                sessionStorage.removeItem('isTransitioning');
+                overlay.classList.remove('active');
+                gsap.set(overlay, { yPercent: 100, opacity: 0 }); // Reset for next time
+            }
+        });
+    } else {
+        // Initial load (not a transition) - ensure overlay is hidden
+        gsap.set(overlay, { yPercent: 100, opacity: 0 });
+    }
+
+    // 3. Bind Links (Animate In)
+    const links = document.querySelectorAll('a:not([href^="#"]):not([href^="mailto"]):not([href^="tel"]):not([target="_blank"])');
+
+    links.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+            const targetPath = href.split('/').pop() || 'index.html';
+
+            // Check if it's actually a different page
+            if (href && targetPath !== currentPath) {
+                e.preventDefault();
+                sessionStorage.setItem('isTransitioning', 'true');
+
+                overlay.classList.add('active');
+                gsap.set(overlay, { yPercent: 100, opacity: 1 });
+
+                gsap.to(overlay, {
+                    yPercent: 0,
+                    duration: 0.8,
+                    ease: 'power4.inOut',
+                    onComplete: () => {
+                        window.location.href = href;
+                    }
+                });
+            }
+        });
+    });
+}
+
+// Init New Features
+initLenis();
+initPageTransitions();

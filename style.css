@@ -2307,3 +2307,72 @@ button:hover~.cursor .cursor-ring,
         font-size: clamp(1.6rem, 6vw, 2.4rem);
     }
 }
+
+/* ==========================================
+   14. LENIS SMOOTH SCROLL
+   ========================================== */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+    pointer-events: none;
+}
+
+/* ==========================================
+   15. PAGE TRANSITION OVERLAY
+   ========================================== */
+.page-transition-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #050208;
+    z-index: 99999;
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(100%);
+    will-change: transform, opacity;
+}
+
+.page-transition-overlay.active {
+    pointer-events: all;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   16. GLASSMORPHISM UTILITY
+   ========================================== */
+.glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
